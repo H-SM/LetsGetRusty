@@ -1,0 +1,84 @@
+ ~/Projects/rust/hello_world  rustc main.rs                                         
+
+ ~/Projects/rust/hello_world ls                                                   
+main  main.rs
+
+ ~/Pr/rust/hello_world  ./main                                                
+let's start rust hsm
+
+ ~/Projects/rust/hello_world  cargo --version                                         ✔  20:25:32 
+cargo 1.75.0 (1d8b05cdd 2023-11-20)
+
+ ~/Projects/rust/hello_world  cargo new hello_cargo                                   ✔  20:26:02 
+     Created binary (application) `hello_cargo` package
+
+ ~/Projects/rust/hello_world  cd hello_cargo                                          ✔  20:26:21 
+
+ ~/Pr/r/h/hello_cargo  master ?3  cargo build                                        ✔  20:26:59 
+   Compiling hello_cargo v0.1.0 (/home/hsm/Projects/rust/hello_world/hello_cargo)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.14s
+
+ ~/Pr/r/h/hello_cargo  master ?4  ls                                                 ✔  20:27:07 
+Cargo.lock  Cargo.toml  src  target
+
+ ~/Pr/r/h/hello_cargo  master ?4  cargo run                                          ✔  20:27:09 
+    Finished dev [unoptimized + debuginfo] target(s) in 0.01s
+     Running `target/debug/hello_cargo`
+Hello, world!
+
+ ~/Pr/r/h/hello_cargo  master ?4  cargo --help                                       ✔  20:27:35 
+Rust's package manager
+
+Usage: cargo [+toolchain] [OPTIONS] [COMMAND]
+       cargo [+toolchain] [OPTIONS] -Zscript <MANIFEST_RS> [ARGS]...
+
+Options:
+  -V, --version             Print version info and exit
+      --list                List installed commands
+      --explain <CODE>      Provide a detailed explanation of a rustc error message
+  -v, --verbose...          Use verbose output (-vv very verbose/build.rs output)
+  -q, --quiet               Do not print cargo log messages
+      --color <WHEN>        Coloring: auto, always, never
+  -C <DIRECTORY>            Change to DIRECTORY before doing anything (nightly-only)
+      --frozen              Require Cargo.lock and cache are up to date
+      --locked              Require Cargo.lock is up to date
+      --offline             Run without accessing the network
+      --config <KEY=VALUE>  Override a configuration value
+  -Z <FLAG>                 Unstable (nightly-only) flags to Cargo, see 'cargo -Z help' for details
+  -h, --help                Print help
+
+Commands:
+    build, b    Compile the current package
+    check, c    Analyze the current package and report errors, but don't build object files
+    clean       Remove the target directory
+    doc, d      Build this package's and its dependencies' documentation
+    new         Create a new cargo package
+    init        Create a new cargo package in an existing directory
+    add         Add dependencies to a manifest file
+    remove      Remove dependencies from a manifest file
+    run, r      Run a binary or example of the local package
+    test, t     Run the tests
+    bench       Run the benchmarks
+    update      Update dependencies listed in Cargo.lock
+    search      Search registry for crates
+    publish     Package and upload this package to the registry
+    install     Install a Rust binary. Default location is $HOME/.cargo/bin
+    uninstall   Uninstall a Rust binary
+    ...         See all commands with --list
+
+See 'cargo help <command>' for more information on a specific command.
+
+
+ ~/Pr/r/h/hello_cargo  master ?4  cargo --errors                                 101 ✘  20:27:58 
+error: unexpected argument '--errors' found
+
+  tip: a similar argument exists: '--verbose'
+
+Usage: cargo [+toolchain] [OPTIONS] [COMMAND]
+       cargo [+toolchain] [OPTIONS] -Zscript <MANIFEST_RS> [ARGS]...
+
+For more information, try '--help'.
+
+ ~/Pr/r/h/hello_cargo  master ?4                                                   1 ✘  20:28:05 
+
+ ~/Pr/r/h/hello_cargo  master ?4                                                 INT ✘  20:28:55 
