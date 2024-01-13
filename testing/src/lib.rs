@@ -79,9 +79,34 @@ mod tests {
             Err(String::from("two plus two is not four!"))
         }
     }
+
+    #[test]
+    #[ignore] 
+    fn expensive_test() {
+        //code here may take a lot of time to run (hrs)..
+    }
 }
 
 
 pub fn greeting(name : &str) -> String {
     format!("hello {}!",name)
 } 
+// cargo test -- --test-threads=1 //serial tesing over the testing file (library)
+// to have the print statement of the functions called over the test case failed -> 
+// cargo test -- --show-output
+
+// to test a single test -> 
+// cargo test <fn_name>
+
+// run tests based on the module name -> 
+// cargo test <module >::
+// cargo test tests::    (above)
+
+// to have the ignored tests to run -> 
+// cargo test -- --ignored
+
+// to run tests of a single file -> 
+// cargo test --test <file_name>
+
+// CONVENTION -> MAKE YOUR TEST CODE IN THE SAME FILE AS OF THE CODE 
+
