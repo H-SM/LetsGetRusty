@@ -1,0 +1,9 @@
+Searching for world
+in the file : poem.txt
+the world was grey,
+the world was cold,
+the world was gone.
+the world was calm,
+the world was brown,
+the world was born
+the world was grey,
