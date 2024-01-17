@@ -5,10 +5,10 @@ use std::process;
 use minigrep::FileHere;
 
 fn main() {
-    let args : Vec<String> = env::args().collect();
     //first index is the binary path
+    // env::args() -> is an iterator
 
-    let config = FileHere::new(&args).unwrap_or_else(|err| {
+    let config = FileHere::new(env::args()).unwrap_or_else(|err| {
         eprintln!("Problem parsing the arguments : {}", err);
         process::exit(1);
     });

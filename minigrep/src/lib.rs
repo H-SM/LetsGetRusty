@@ -25,13 +25,18 @@ pub struct FileHere {
 
 //adding the parse_Config to the struct
 impl FileHere {
-    pub fn new(args : &[String]) -> Result<FileHere, &str> {
-        if args.len() < 3 {
-            return Err("not enough arguments");
-        }
-        let query = args[1].clone();
-        let filename = args[2].clone();
+    pub fn new(mut args : env::Args) -> Result<FileHere, &'static str> {
+        args.next(); //path
+        let query = match args.next(){
+            Some(arg) => arg,
+            None => return Err("didn't get a query"),
+        };
     
+        let filename = match args.next(){
+            Some(arg) => arg,
+            None => return Err("didn't get a query"),
+        };
+
         let case_sensitive = env::var("CASE_INSENSITIVE").is_err();
 
         Ok(FileHere {query, filename, case_sensitive})
@@ -40,15 +45,20 @@ impl FileHere {
 }
 
 pub fn search<'a>(query : &str , content : &'a str ) -> Vec<&'a str> {
-    let mut res = Vec::new();
+    // let mut res = Vec::new();
     
-    for line in content.lines() {
-        if line.contains(query) {
-            res.push(line);
-        }
-    }
+    // for line in content.lines() {
+    //     if line.contains(query) {
+    //         res.push(line);
+    //     }
+    // }
 
-    res
+    // res
+
+    content
+        .lines()
+        .filter(|line| line.contains(query))
+        .collect()
 }
 
 pub fn search_case_insensitive<'a>(query : &str , content : &'a str ) -> Vec<&'a str> {
